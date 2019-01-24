@@ -1,0 +1,19 @@
+development:
+  clients:
+    default:
+      database: ENV["DB_DEVELOPMENT"]
+      hosts:
+        - localhost:27017
+      options:
+  options:
+
+test:
+  clients:
+    default:
+      database: ENV["DB_TEST"]
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
