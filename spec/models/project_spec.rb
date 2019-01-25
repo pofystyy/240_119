@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Project, type: :model do
-  let(:category)     { Category.new('1') }
+  let(:category) { Category.create(name: '1') }
+
   it "is valid with valid attributes" do
-    expect(Project.new(category: '1')).to be_valid
+    expect(Project.new(category_id: category._id)).to be_valid
   end
 end
