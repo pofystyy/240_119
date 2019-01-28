@@ -1,6 +1,6 @@
 class Upload
   include Mongoid::Document
-  include FileUploader::Attachment.new(:file)
+  include UrlUploader::Attachment.new(:url)
 
-  field :url, type: String
+  field :url_data, type: String
 end
