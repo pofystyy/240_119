@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get '/careers',     to: 'careers#index'
-  get '/career/:id',  to: 'careers#show'
+  resources :careers, only: [:index, :show]
+  resources :educations, only: [:index, :show]
 end
