@@ -5,5 +5,5 @@ class Education
   field :description,  type: String
   field :requirements, type: String
   field :results,      type: String
-  field :active,       type: Boolean
+  field :active,       type: Mongoid::Boolean#, :default => true
 end
