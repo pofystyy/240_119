@@ -31,8 +31,8 @@ RSpec.describe Career, type: :model do
                                                                                          requirements: 'qwerty',
                                                                                          benefits: 'lorem',
                                                                                          active: false },
-                                                                         id: career.id.to_s,
-                                                                         type: :career } })
+                                                                           id: career.id.to_s,
+                                                                           type: :career } })
   end
 
   it "is valid Serialization" do
@@ -42,8 +42,8 @@ RSpec.describe Career, type: :model do
                                                                                          requirements: nil,
                                                                                          benefits: nil,
                                                                                          active: true },
-                                                                         id: career.id.to_s,
-                                                                         type: :career } })
+                                                                           id: career.id.to_s,
+                                                                           type: :career } })
   end
 
   it "is not valid Serialization" do
@@ -53,7 +53,7 @@ RSpec.describe Career, type: :model do
                                                                                              requirements: 'qwerty',
                                                                                              benefits: 'lorem',
                                                                                              active: false },
-                                                                             id: career.id.to_s,
-                                                                             type: :career } })
+                                                                               id: career.id.to_s,
+                                                                               type: :career } })
   end
 end
