@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :works,      only: [:index, :show]
   resources :uploads,    only: [:index, :show]
   resources :categories, only: [:index, :show]
+  resources :projects,   only: [:index, :show]
 end
