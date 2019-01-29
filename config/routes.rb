@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :educations, only: [:index, :show]
   resources :works,      only: [:index, :show]
   resources :uploads,    only: [:index, :show]
+  resources :categories, only: [:index, :show]
 end
