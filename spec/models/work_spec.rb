@@ -29,7 +29,7 @@ RSpec.describe Work, type: :model do
   it "is not valid Serialization" do
     work = Work.new(year: 2017, description: 'works')
     expect(WorkSerializer.new(work).serializable_hash).not_to eq({ data: { attributes: { description: 'job', year: 1999 },
-                                                                       id: work.id.to_s,
-                                                                       type: :work } })
+                                                                           id: work.id.to_s,
+                                                                           type: :work } })
   end
 end
