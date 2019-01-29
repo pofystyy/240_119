@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :careers,    only: [:index, :show]
+  resources :educations, only: [:index, :show]
+  resources :works,      only: [:index, :show]
+  resources :uploads,    only: [:index, :show]
+  resources :categories, only: [:index, :show]
+  resources :projects,   only: [:index, :show]
 end
