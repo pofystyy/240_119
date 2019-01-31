@@ -4,6 +4,10 @@ require 'json'
 RSpec.describe "Upload Controller", type: :feature do
   #let(:upload) { create(:upload) }
 
+  # before(:each) do
+  #   DatabaseCleaner.clean
+  # end
+
    context "GET index" do
   #   scenario "should return json" do
   #     visit uploads_path
