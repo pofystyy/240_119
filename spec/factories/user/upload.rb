@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :upload do
-    url_data { '7777777777777777' }
+    url_data { Faker::Lorem.word }
   end
 
 end
