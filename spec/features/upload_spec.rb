@@ -2,19 +2,15 @@ require "rails_helper"
 require 'json'
 
 RSpec.describe "Upload Controller", type: :feature do
-  #let(:upload) { create(:upload) }
+  let(:valid_upload)   { attributes_for(:upload) }
+  let(:invalid_upload) { build(:upload) }
 
-  # before(:each) do
-  #   DatabaseCleaner.clean
-  # end
+  before(:each) do
+    DatabaseCleaner.clean
+    #create_list(:upload, 5)
+  end
 
-   context "GET index" do
-  #   scenario "should return json" do
-  #     visit uploads_path
-  #     data = UploadSerializer.new(upload).serialized_json
-  #     expect(page).to have_content(data)
-  #   end
-
+  context "GET index" do
     scenario "status should be 200" do
       visit uploads_path
 
@@ -22,17 +18,16 @@ RSpec.describe "Upload Controller", type: :feature do
     end
 
     scenario "should return json" do
-      upload = { url_data: 'url' }.to_json
+      test_upload = Upload.create([valid_upload])
       visit uploads_path
 
-      expect(page).to have_content(upload)
+      expect(page).to have_content(UploadSerializer.new(test_upload).serialized_json)
     end
 
     scenario "should not return json" do
-      project = { first: 'field', second: 'url' }.to_json
       visit uploads_path
 
-      expect(page).not_to have_content(project)
+      expect(page).not_to have_content(UploadSerializer.new([invalid_upload]).serialized_json)
     end
   end
 end
