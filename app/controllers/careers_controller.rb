@@ -6,6 +6,6 @@ class CareersController < ApplicationController
 
   def show
     career = Career.find(params[:id])
-    jrender json: CareerSerializer.new(career).serialized_json
+    render json: CareerSerializer.new(career).serialized_json
   end
 end
