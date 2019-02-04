@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
     if params[:category].blank?
       projects = Project.all
     else
-      category_id = Category.find(name: params[:category]).id
+      category_id = Category.find(id: params[:category])
       projects = Project.where(category_id: category_id)
     end
     render json: ProjectSerializer.new(projects).serialized_json

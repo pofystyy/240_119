@@ -5,7 +5,7 @@ class WorksController < ApplicationController
   end
 
   def show
-    work = Works.find(params[:id])
+    work = Work.find(params[:id])
     render json: WorkSerializer.new(work).serialized_json
   end
 end
