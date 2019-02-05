@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'json'
 
 RSpec.describe "Career Controller", type: :feature do
   let(:valid_career)   { create(:career) }

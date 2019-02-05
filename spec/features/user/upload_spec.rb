@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'json'
 
 RSpec.describe "Upload Controller", type: :feature do
   let(:valid_upload)   { create(:upload) }
