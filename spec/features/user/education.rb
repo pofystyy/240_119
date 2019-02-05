@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'json'
 
 RSpec.describe "Education Controller", type: :feature do
   let(:valid_education)   { create(:education) }

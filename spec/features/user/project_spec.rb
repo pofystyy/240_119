@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'json'
 
 RSpec.describe "Project Controller", type: :feature do
   let(:category)        { create(:category) }

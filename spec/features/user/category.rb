@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'json'
 
 RSpec.describe "Category Controller", type: :feature do
   let(:valid_category)   { create(:category_with_project) }

@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'json'
 
 RSpec.describe "Work Controller", type: :feature do
   let(:valid_work)   { create(:work) }
