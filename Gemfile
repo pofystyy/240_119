@@ -6,6 +6,8 @@ ruby '2.5.1'
 gem 'mongoid'
 gem 'shrine-mongoid'
 gem 'fast_jsonapi'
+gem 'rails_admin'
+gem 'kaminari-mongoid'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
