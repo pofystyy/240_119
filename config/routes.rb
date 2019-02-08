@@ -6,11 +6,7 @@ Rails.application.routes.draw do
   resources :uploads,    only: [:index, :show]
   resources :categories, only: [:index, :show]
   resources :projects,   only: [:index, :show]
-
-  resources :users, only: [:new, :create]
-  get '/sign_up', to: 'users#new', as: :sign_up
-
   resources :sessions, only: [:new, :create, :destroy]
-  get '/log_in', to: 'sessions#new', as: :log_in
-  get '/log_out', to: 'sessions#destroy', as: :log_out
+  get    '/login',  to: 'sessions#new',     as: :login
+  delete '/logout', to: 'sessions#destroy', as: :logout
 end
