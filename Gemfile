@@ -8,7 +8,7 @@ gem 'shrine-mongoid'
 gem 'fast_jsonapi'
 gem 'rails_admin'
 gem 'kaminari-mongoid'
-
+gem 'sorcery'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
