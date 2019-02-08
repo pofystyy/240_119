@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
-  def new
-  end
-
   def create
     if login(params[:email], params[:password])
       redirect_to rails_admin_path
@@ -15,5 +12,4 @@ class SessionsController < ApplicationController
     logout
     redirect_to login_path
   end
-
 end
