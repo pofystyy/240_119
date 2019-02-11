@@ -1,4 +1,5 @@
 class UploadsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   def index
     uploads = Upload.all
     render json: UploadSerializer.new(uploads).serialized_json

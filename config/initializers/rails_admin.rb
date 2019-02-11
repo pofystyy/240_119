@@ -6,7 +6,7 @@ RailsAdmin.config do |config|
   config.parent_controller = 'ApplicationController'
 
   config.authorize_with do
-    redirect_to main_app.login_path unless current_user.admin
+    redirect_to main_app.login_path unless current_user
   end
 
   ### Popular gems integration

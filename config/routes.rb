@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :uploads,    only: [:index, :show]
   resources :categories, only: [:index, :show]
   resources :projects,   only: [:index, :show]
-  resources :sessions, only: [:new, :create, :destroy]
-  get    '/login',  to: 'sessions#new',     as: :login
-  delete '/logout', to: 'sessions#destroy', as: :logout
+  resources :user_sessions, only: [:new, :create, :destroy]
+  get    '/login',  to: 'user_sessions#new',     as: :login
+  post   '/login',  to: 'user_sessions#create'
+  delete '/logout', to: 'user_sessions#destroy', as: :logout
 end

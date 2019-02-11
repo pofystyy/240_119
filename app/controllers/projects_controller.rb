@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   def index
     if params[:category].blank?
       projects = Project.all

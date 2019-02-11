@@ -1,23 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { create(:user) }
-
   before(:each) do
     DatabaseCleaner.clean
+    create_list(:user, 5)
   end
 
   it "is valid with valid attributes" do
     expect(User.new).to be_valid
   end
 
-  it "returns the correct number of users" do
-    user
-    expect(User.count).to eq 1
+  it "is valid with valid attributes" do
+    expect(User.count).to eq 5
   end
 
-  it "returns the correct number of users" do
-    create_list(:user, 5)
-    expect(User.count).to eq 5
+  it "is valid with valid attributes" do
+    User.create(email: 'as@as', password: '123')
+    expect(User.count).to eq 6
   end
 end

@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class UserSessionsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
   def create
     if login(params[:email], params[:password])
