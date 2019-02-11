@@ -8,7 +8,7 @@ gem 'shrine-mongoid'
 gem 'fast_jsonapi'
 gem 'rails_admin'
 gem 'kaminari-mongoid'
-
+gem 'sorcery'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
@@ -43,6 +43,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  gem 'rails-controller-testing'
 end
 
 group :development do

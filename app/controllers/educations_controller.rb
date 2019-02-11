@@ -1,4 +1,5 @@
 class EducationsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   def index
     educations = Education.all
     render json: EducationSerializer.new(educations).serialized_json

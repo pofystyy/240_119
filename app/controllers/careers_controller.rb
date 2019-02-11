@@ -1,4 +1,5 @@
 class CareersController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   def index
     careers = Career.all
     render json: CareerSerializer.new(careers).serialized_json

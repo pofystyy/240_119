@@ -1,4 +1,13 @@
 RailsAdmin.config do |config|
+  config.authenticate_with do
+    require_login
+  end
+  config.current_user_method(&:current_user)
+  config.parent_controller = 'ApplicationController'
+
+  config.authorize_with do
+    redirect_to main_app.login_path unless current_user
+  end
 
   ### Popular gems integration
 

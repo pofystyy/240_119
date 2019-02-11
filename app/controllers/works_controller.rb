@@ -1,4 +1,5 @@
 class WorksController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   def index
     works = Work.all
     render json: WorkSerializer.new(works).serialized_json
