@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: fcbfaa282dc6c2d4c1393bcb65d9fb647c8a5bc0
+  revision: 07290fe0f4fc6a305d08fd1e8ef265ea4127dca7
   branch: master
   specs:
-    faker (1.9.1)
+    faker (1.9.3)
       i18n (>= 0.7)
 
 GEM
@@ -57,12 +57,12 @@ GEM
     arel (9.0.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
-    bootsnap (1.3.2)
+    bootsnap (1.4.0)
       msgpack (~> 1.0)
     bson (4.4.2)
     builder (3.2.3)
     byebug (10.0.2)
-    capybara (3.13.0)
+    capybara (3.13.2)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -91,19 +91,16 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.4)
-    content_disposition (1.0.0)
     crass (1.0.4)
     database_cleaner (1.7.0)
     diff-lcs (1.3)
-    down (4.8.0)
-      addressable (~> 2.5)
     erubi (1.8.0)
     execjs (2.7.0)
-    factory_bot (4.11.1)
-      activesupport (>= 3.0.0)
-    factory_bot_rails (4.11.1)
-      factory_bot (~> 4.11.1)
-      railties (>= 3.0.0)
+    factory_bot (5.0.0)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.0.1)
+      factory_bot (~> 5.0.0)
+      railties (>= 4.2.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     fast_jsonapi (1.5)
@@ -163,8 +160,8 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    mongo (2.6.4)
-      bson (>= 4.3.0, < 5.0.0)
+    mongo (2.7.0)
+      bson (>= 4.4.2, < 5.0.0)
     mongoid (7.0.2)
       activemodel (>= 5.1, < 6.0.0)
       mongo (>= 2.5.1, < 3.0.0)
@@ -274,12 +271,6 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
-    shrine (2.14.0)
-      content_disposition (~> 1.0)
-      down (~> 4.1)
-    shrine-mongoid (0.2.4)
-      mongoid (>= 5.0)
-      shrine (~> 2.4)
     sorcery (0.13.0)
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
@@ -343,7 +334,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
-  shrine-mongoid
   sorcery
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -356,4 +346,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.17.2
+   2.0.1

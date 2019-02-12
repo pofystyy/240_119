@@ -14,6 +14,7 @@ RSpec.describe 'Access to register page', type: :request do
     end
 
     it 'admin page' do
+      DatabaseCleaner.clean
       @user = create(:user)
       login_user
       get rails_admin_path

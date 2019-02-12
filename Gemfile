@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'mongoid'
-gem 'shrine-mongoid'
 gem 'fast_jsonapi'
 gem 'rails_admin'
 gem 'kaminari-mongoid'
