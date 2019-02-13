@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :careers,       only: [:index, :show]
   resources :educations,    only: [:index, :show]
   resources :works,         only: [:index, :show]
-  resources :attachments,   only: [:index, :show]
   resources :categories,    only: [:index, :show]
   resources :projects,      only: [:index, :show]
   resources :user_sessions, only: [:new, :create, :destroy]

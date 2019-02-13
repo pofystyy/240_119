@@ -1,0 +1,54 @@
+#%RAML 1.0
+title: Project_w
+baseUri:
+mediaType: application/json
+
+/careers:
+	displayName: Careers
+	get:
+		description: All careers list [All]
+		responses:
+			200:
+			  body:
+			  	application/json:
+			  		type: listCareers
+
+/categories:
+	displayName: Project categories
+	get:
+		description: All categories list [All]
+		responses:
+			200:
+			  body:
+			  	application/json:
+			  		type: listCategories
+
+/educations:
+	displayName: Educations
+	get:
+		description: All educations list [All]
+		responses:
+			200:
+			  body:
+			  	application/json:
+			  		type: listEducations
+
+/projects:
+	displayName: Projects
+	get:
+		description: All projects list [All]
+		responses:
+			200:
+			  body:
+			  	application/json:
+			  		type: listProjects
+
+/work:
+	displayName: Works
+	get:
+		description: All works list [All]
+		responses:
+			200:
+			  body:
+			  	application/json:
+			  		type: listWorks
