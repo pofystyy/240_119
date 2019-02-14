@@ -6,4 +6,6 @@ class Education
   field :requirements, type: String
   field :results,      type: String
   field :active,       type: Mongoid::Boolean, :default => true
+
+  validates_presence_of :name, :launch_date, :description, :requirements, :results
 end
