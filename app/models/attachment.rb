@@ -10,9 +10,9 @@ class Attachment
     self.file.url
   end
   
-	def file_link
-		%{<a href="#{file_path}", target="_blank">"#{file_path}"</a>}.html_safe
-	end 
+  def file_link
+    %{<a href="#{file_path}", target="_blank">"#{file_path}"</a>}.html_safe
+  end 
 
   def generate_info
     self.info = file_path
