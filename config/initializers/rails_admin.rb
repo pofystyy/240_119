@@ -9,6 +9,14 @@ RailsAdmin.config do |config|
     redirect_to main_app.login_path unless current_user
   end
 
+  config.model Attachment do
+    list do
+      field :id
+      field :file
+      field :file_link
+    end
+  end
+
   ### Popular gems integration
 
   ## == Devise ==
