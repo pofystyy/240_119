@@ -1,4 +1,3 @@
-require 'uri'
 class Attachment
   include Mongoid::Document
 
@@ -10,7 +9,7 @@ class Attachment
   def file_path
     self.file.url
   end
-
+  
 	def file_link
 		%{<a href="#{file_path}", target="_blank">"#{file_path}"</a>}.html_safe
 	end 
