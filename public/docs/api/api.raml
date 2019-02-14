@@ -3,52 +3,125 @@ title: Project_w
 baseUri:
 mediaType: application/json
 
+types:
+  singleCareer: !include types/response/single/career.raml
+  singleCategory: !include types/response/single/category.raml
+  singleEducation: !include types/response/single/education.raml
+  singleProject: !include types/response/single/project.raml
+  singleWork: !include types/response/single/work.raml
+
+  listCareers: !include types/response/list/careers.raml
+  listCategories: !include types/response/list/categories.raml
+  listEducations: !include types/response/list/educations.raml
+  listProjects: !include types/response/list/projects.raml
+  listWorks: !include types/response/list/works.raml
+
 /careers:
-	displayName: Careers
-	get:
-		description: All careers list [All]
-		responses:
-			200:
-			  body:
-			  	application/json:
-			  		type: listCareers
+  displayName: Careers
+  get:
+    description: All careers list [All]
+    responses:
+      200:
+        body:
+          application/json:
+            type: listCareers
+  /{id}:
+    uriParameters:
+      id:
+        type: string
+        description: Career id
+    get:
+      description: Get one career item [All]
+      responses:
+        200:
+          body:
+            application/json:
+              type: singleCareer
 
 /categories:
-	displayName: Project categories
-	get:
-		description: All categories list [All]
-		responses:
-			200:
-			  body:
-			  	application/json:
-			  		type: listCategories
+  displayName: Project categories
+  get:
+    description: All categories list [All]
+    responses:
+      200:
+        body:
+          application/json:
+            type: listCategories
+  /{id}:
+    uriParameters:
+      id:
+        type: string
+        description: Category id
+    get:
+      description: Get one category item [All]
+      responses:
+        200:
+          body:
+            application/json:
+              type: singleCategory
 
 /educations:
-	displayName: Educations
-	get:
-		description: All educations list [All]
-		responses:
-			200:
-			  body:
-			  	application/json:
-			  		type: listEducations
+  displayName: Educations
+  get:
+    description: All educations list [All]
+    responses:
+      200:
+        body:
+          application/json:
+            type: listEducations
+  /{id}:
+    uriParameters:
+      id:
+        type: string
+        description: Education id
+    get:
+      description: Get one education item [All]
+      responses:
+        200:
+          body:
+            application/json:
+              type: singleEducation
 
 /projects:
-	displayName: Projects
-	get:
-		description: All projects list [All]
-		responses:
-			200:
-			  body:
-			  	application/json:
-			  		type: listProjects
+  displayName: Projects
+  get:
+    description: All projects list [All]
+    responses:
+      200:
+        body:
+          application/json:
+            type: listProjects
+  /{id}:
+    uriParameters:
+      id:
+        type: string
+        description: Project id
+    get:
+      description: Get one project item [All]
+      responses:
+        200:
+          body:
+            application/json:
+              type: singleProject
 
-/work:
-	displayName: Works
-	get:
-		description: All works list [All]
-		responses:
-			200:
-			  body:
-			  	application/json:
-			  		type: listWorks
+/works:
+  displayName: Works
+  get:
+    description: All works list [All]
+    responses:
+      200:
+        body:
+          application/json:
+            type: listWorks
+  /{id}:
+    uriParameters:
+      id:
+        type: string
+        description: Work id
+    get:
+      description: Get one work item [All]
+      responses:
+        200:
+          body:
+            application/json:
+              type: singleWork
