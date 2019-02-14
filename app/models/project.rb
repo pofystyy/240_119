@@ -6,4 +6,5 @@ class Project
   field :content,     type: String
 
   belongs_to :category
+  validates_presence_of :name, :url, :description, :content
 end
