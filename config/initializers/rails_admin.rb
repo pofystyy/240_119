@@ -11,7 +11,6 @@ RailsAdmin.config do |config|
 
   config.model Attachment do
     list do
-      field :id
       field :file
       field :file_link
     end
