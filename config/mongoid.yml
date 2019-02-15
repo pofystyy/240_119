@@ -1,7 +1,7 @@
 development:
   clients:
     default:
-      database: "ENV['DB_DEVELOPMENT']"
+      database: ENV['DB_DEVELOPMENT']
       hosts:
         - localhost:27017
       options:
@@ -10,10 +10,16 @@ development:
 test:
   clients:
     default:
-      database: "ENV['DB_TEST']"
+      database: ENV['DB_TEST']
       hosts:
         - localhost:27017
       options:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      database: mongoid_rails_production
+      hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
