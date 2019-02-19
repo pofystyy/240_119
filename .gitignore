@@ -13,6 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 
+/shared/log
 
 /node_modules
 /yarn-error.log
@@ -22,5 +23,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/credentials.yml.enc
 
 /public/uploads
