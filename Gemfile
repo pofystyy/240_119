@@ -5,7 +5,7 @@ ruby '2.5.1'
 
 gem 'mongoid'
 gem 'fast_jsonapi'
-gem 'rails_admin'
+gem 'rails_admin', :git => "https://github.com/sferik/rails_admin.git" 
 gem 'kaminari-mongoid'
 gem 'sorcery'
 gem 'carrierwave-mongoid'
