@@ -21,5 +21,5 @@ test:
 production:
   clients:
     default:
-      database: mongoid_rails_production
+      database: ENV['DB_PRODUCTION']
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
