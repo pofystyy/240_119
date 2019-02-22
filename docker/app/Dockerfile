@@ -14,7 +14,7 @@ RUN bundle config --global frozen 1 \
 
 FROM ruby:2.5-alpine3.9
 WORKDIR /usr/src/app
-# Copy app with gems from former build stage
+
 COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
 COPY . .
 
