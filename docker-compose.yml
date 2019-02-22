@@ -4,16 +4,21 @@ services:
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
+    volumes:
+      - public:/usr/src/app/public
     environment:
-      #- DB_PRODUCTION=webmil_db
       - MONGODB_ADDRESS=mongodb
       - RAILS_LOG_TO_STDOUT=true
+
   web:
     build:
       context: .
       dockerfile: ./docker/web/Dockerfile-nginx
     ports:
       - "80:80"
+    volumes:
+      - public:/usr/src/app/public
+
   mongodb:
     image: mongo:latest
     container_name: "mongodb"
@@ -23,5 +28,15 @@ services:
     volumes:
       - mongodb:/data/db
     command: mongod --smallfiles --logpath=/dev/null
+
+  builder:
+    build:
+      context: .
+      dockerfile: ./docker/builder/Dockerfile
+    volumes:
+      - public:/usr/src/app/public
+    command: sh -c "cp /tmp/public /usr/src/app"
+
 volumes:
   mongodb:
+  public:

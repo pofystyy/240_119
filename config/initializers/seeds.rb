@@ -1,1 +1,0 @@
-#User.create(email: 'user@mail.com', password: '123456')
