@@ -16,6 +16,8 @@ RailsAdmin.config do |config|
     end
   end
 
+  #config.assets.initialize_on_precompile = false
+
   ### Popular gems integration
 
   ## == Devise ==

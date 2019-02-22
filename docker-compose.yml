@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./docker/app/Dockerfile
     environment:
-      - DB_PRODUCTION=webmil_db
+      #- DB_PRODUCTION=webmil_db
       - MONGODB_ADDRESS=mongodb
       - RAILS_LOG_TO_STDOUT=true
   web:
@@ -22,6 +22,6 @@ services:
       - MONGO_LOG_DIR=/dev/null
     volumes:
       - mongodb:/data/db
-    command: mongod --smallfiles --logpath=/dev/null # --quiet
+    command: mongod --smallfiles --logpath=/dev/null
 volumes:
   mongodb:

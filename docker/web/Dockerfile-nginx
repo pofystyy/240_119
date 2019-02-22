@@ -18,6 +18,7 @@ RUN bundle exec rake assets:precompile RAILS_ENV=production
 FROM nginx:1.14-alpine
 
 WORKDIR /usr/src/app
+ENV RAILS_ENV production
 
 COPY --from=Builder /usr/src/app/public/assets /usr/src/app/public/assets
 

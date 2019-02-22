@@ -20,11 +20,9 @@ COPY . .
 
 ENV LANG C.UTF-8
 ENV RAILS_ENV production
-#ENV PORT 3000
 
 RUN apk add --no-cache nodejs-current tzdata
 
 EXPOSE 3000
-
 
 CMD ["bundle", "exec", "puma"]
