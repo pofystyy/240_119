@@ -1,7 +1,7 @@
 development:
   clients:
     default:
-      database: ENV['DB_DEVELOPMENT']
+      database: db_development #ENV['DB_DEVELOPMENT']
       hosts:
         - localhost:27017
       options:
@@ -10,7 +10,7 @@ development:
 test:
   clients:
     default:
-      database: ENV['DB_TEST']
+      database: db_test #ENV['DB_TEST']
       hosts:
         - localhost:27017
       options:
@@ -21,5 +21,5 @@ test:
 production:
   clients:
     default:
-      database: mongoid_rails_production
+      database: webmil_db #ENV['DB_PRODUCTION']
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]

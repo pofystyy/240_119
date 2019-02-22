@@ -1,0 +1,10 @@
+.env
+.git
+.idea
+.dockerignore
+.byebug_history
+log/*
+tmp/*
+public/uploads
+spec
+public/assets

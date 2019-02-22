@@ -1,0 +1,27 @@
+FROM ruby:2.5-alpine3.9 as builder
+WORKDIR /usr/src/app
+
+RUN apk add --no-cache openssh git build-base gcc nodejs-current tzdata
+
+COPY Gemfile* ./
+
+RUN gem install bundler -v 2.0.1
+RUN bundle config --global frozen 1 \
+&& bundle install -j4 --retry 3 --without development test \
+&& rm -rf /usr/local/bundle/cache/*.gem \
+&& find /usr/local/bundle/gems/ -name "*.c" -delete \
+&& find /usr/local/bundle/gems/ -name "*.o" -delete
+COPY . .
+
+RUN bundle exec rake assets:precompile RAILS_ENV=production
+
+FROM nginx:1.14-alpine
+
+WORKDIR /usr/src/app
+ENV RAILS_ENV production
+
+COPY --from=Builder /usr/src/app/public/assets /usr/src/app/public/assets
+
+COPY ./docker/web/webmil.conf /etc/nginx/conf.d/webmil.conf
+ RUN rm /etc/nginx/conf.d/default.conf
+EXPOSE 80
